@@ -303,7 +303,7 @@ details summary::-webkit-details-marker {
 
 /* Abstract toggle styling */
 .work-abstract-toggle {
-  color: magenta;
+  color: #595959;
   cursor: pointer;
 }
 
@@ -330,7 +330,7 @@ details summary::-webkit-details-marker {
 /* Toggle styling */
 .work-toggle {
   font-size: 12px;
-  color: black;   /* magenta */
+  color: #595959;   /* magenta */
 }
 
 .work-toggle:hover {
@@ -355,10 +355,28 @@ details summary::-webkit-details-marker {
 /* Arrow before Abstract / Presentations */
 .inline-details summary .work-toggle::before {
   content: "▸ ";
-  color: black;
+  color: #595959;
 }
 
 /* Arrow changes when open */
 .inline-details[open] summary .work-toggle::before {
   content: "▾ ";
+}
+/* Local navigation links (in-page) */
+.href_local {
+  color: #595959;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* Arrow before local links */
+.href_local::before {
+  content: "→ ";
+  margin-right: 2px;
+}
+
+/* Optional: subtle hover, not link-like */
+.href_local:hover { 
+  text-decoration: underline;
+  color: #595959;
 }
