@@ -330,7 +330,7 @@ details summary::-webkit-details-marker {
 /* Toggle styling */
 .work-toggle {
   font-size: 12px;
-  color: magenta;   /* magenta */
+  color: black;   /* magenta */
 }
 
 .work-toggle:hover {
@@ -351,4 +351,14 @@ details summary::-webkit-details-marker {
 
 .work-presentations li {
   margin-bottom: 4px;
+}
+/* Arrow before Abstract / Presentations */
+.inline-details summary .work-toggle::before {
+  content: "▸ ";
+  color: black;
+}
+
+/* Arrow changes when open */
+.inline-details[open] summary .work-toggle::before {
+  content: "▾ ";
 }
