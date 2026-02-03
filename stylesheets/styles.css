@@ -35,12 +35,12 @@ h3, h4, h5, h6 {
 }
 
 a {
-  color:#39c;
+  color:magenta;
   text-decoration:none;
 }
 
 a:hover {
-  color:#069;
+  color:darkmagenta;
 }
 
 a small {
@@ -267,4 +267,88 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+/* Remove default details marker and spacing */
+details summary {
+  list-style: none;
+  cursor: default;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Work item spacing */
+.work-item {
+  margin-bottom: 16px;
+}
+
+/* Paper title */
+.work-title {
+  font-weight: 400;
+}
+
+/* Authors line */
+.work-authors {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Meta line (Abstract · PDF · DOI) */
+.work-meta {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Abstract toggle styling */
+.work-abstract-toggle {
+  color: magenta;
+  cursor: pointer;
+}
+
+.work-abstract-toggle:hover {
+  text-decoration: underline;
+}
+
+/* Inline details so toggles sit next to each other */
+.inline-details {
+  display: inline;
+}
+
+/* Remove default marker */
+.inline-details summary {
+  display: inline;
+  list-style: none;
+  cursor: pointer;
+}
+
+.inline-details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Toggle styling */
+.work-toggle {
+  font-size: 12px;
+  color: magenta;   /* magenta */
+}
+
+.work-toggle:hover {
+  text-decoration: underline;
+}
+
+/* Content spacing */
+.work-abstract,
+.work-presentations {
+  margin-top: 8px;
+}
+
+/* Presentations list */
+.work-presentations {
+  list-style: none;
+  padding-left: 0;
+}
+
+.work-presentations li {
+  margin-bottom: 4px;
 }
