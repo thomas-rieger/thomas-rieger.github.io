@@ -1,0 +1,44 @@
+# Compiles cv/CV_TRieger.tex and commits the resulting PDF to the site root,
+# so https://thomasrieger.com/CV_TRieger.pdf always matches the LaTeX source.
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cv/**'
+      - '.github/workflows/build-cv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-cv
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv
+          root_file: CV_TRieger.tex
+
+      - name: Commit PDF
+        run: |
+          cp cv/CV_TRieger.pdf CV_TRieger.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CV_TRieger.pdf
+          if git diff --cached --quiet; then
+            echo "CV unchanged"
+            exit 0
+          fi
+          git commit -m "build CV from cv/CV_TRieger.tex"
+          git pull --rebase
+          git push

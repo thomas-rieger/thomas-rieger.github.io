@@ -1,0 +1,9 @@
+# LaTeX build output from compiling the CV locally.
+# The published CV_TRieger.pdf in the root is built by GitHub Actions.
+cv/*.aux
+cv/*.fdb_latexmk
+cv/*.fls
+cv/*.log
+cv/*.out
+cv/*.synctex.gz
+cv/*.pdf
